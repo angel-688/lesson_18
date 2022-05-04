@@ -2073,14 +2073,16 @@ body:target {
 }
 
 @media (max-width: 800px) {
-  .help__column:not(:last-child) {
+  .help__column {
     padding: 0;
+  }
+  .help__column:not(:last-child) {
     margin: 0px 0px 20px 0px;
   }
 }
 
 .item-help {
-  display: inline-block;
+  display: block;
   padding: 25px 43px 30px 30px;
   background-color: #fff;
   -webkit-box-shadow: 0px 20px 40px rgba(141, 147, 201, 0.08);
