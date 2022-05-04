@@ -1,0 +1,206 @@
+.header {
+   padding: 43px 65px 0px 65px;
+   @media (max-width: 991.98px) {
+      padding: 20px 30px 0px 30px;
+   }
+   // .header__body
+   &__body {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+   }
+   // .header__logo
+   &__logo {
+      flex: 1 1 auto;
+      position: relative;
+      z-index: 50;
+      @media (max-width: 1100px) {
+         order: 1;
+      }
+   }
+   // .header__link-logo
+   &__link-logo {
+      display: inline-flex;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 1.28;
+      letter-spacing: -0.06em;
+      color: #313131;
+      padding: 0px 20px 0px 0px;
+   }
+   // .header__menu
+   &__menu {
+      margin: 0px 15.51% 0px 0px;
+      @media (max-width: 1300px) {
+         margin: 0px 5% 0px 0px;
+      }
+      @media (max-width: 1100px) {
+         margin: 0;
+         order: 3;
+      }
+   }
+   // .header__login-block
+   &__login-block {
+      display: flex;
+      column-gap: 31px;
+      @media (max-width: 1100px) {
+         order: 2;
+      }
+      @media (max-width: 600px) {
+         display: none;
+      }
+   }
+   // .header__sign-in
+   &__sign-in {
+      font-size: 17px;
+      line-height: 1.29;
+      color: #313131;
+      background-color: transparent;
+      cursor: pointer;
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+   // .header__sign-up
+   &__sign-up {
+   }
+}
+.menu {
+   // .menu__icon
+   &__icon {
+   }
+   // .menu__close
+   &__close {
+   }
+   // .menu__body
+   &__body {
+      @media (max-width: 1100px) {
+         position: fixed;
+         top: -100%;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: #fff;
+         z-index: 10;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         padding: 100px 0px 20px 0px;
+         overflow: auto;
+         transition: top 0.5s ease 0s;
+         &::before {
+            content: "";
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #fff;
+            z-index: 10;
+            transition: top 0.5s ease 0s;
+         }
+         body:target &,
+         body:target &::before {
+            top: 0;
+         }
+      }
+      & .header__login-block {
+         display: none;
+         @media (max-width: 600px) {
+            display: flex;
+            order: 1;
+         }
+      }
+      @media (max-width: 600px) {
+         align-items: flex-start;
+         padding: 80px 0px 20px 30px;
+      }
+   }
+   // .menu__list
+   &__list {
+      order: 2;
+      @media (min-width: 1100.98px) {
+         display: flex;
+         column-gap: 50px;
+         row-gap: 10px;
+         flex-wrap: wrap;
+         max-width: 600px;
+      }
+      @media (max-width: 600px) {
+         padding: 30px 0px 0px 0px;
+      }
+   }
+   &__item {
+      @media (max-width: 1100px) {
+         margin: 0px 0px 20px 0px;
+      }
+   }
+   // .menu__link
+   &__link {
+      font-size: 17px;
+      line-height: 1.29;
+      color: #313131;
+      transition: color 0.3s ease 0s;
+      position: relative;
+      &::before {
+         content: "";
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 0%;
+         height: 2px;
+         background-color: #000;
+         transition: width 0.3s ease 0s;
+      }
+      &:hover::before {
+         width: 100%;
+      }
+      @media (max-width: 1100px) {
+         font-size: 24px;
+      }
+   }
+}
+.icon-menu,
+.icon-close {
+   // display: none;
+   @media (max-width: 1100.98px) {
+      position: relative;
+      width: 28px;
+      height: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0px 0px 0px 20px;
+      z-index: 20;
+   }
+   &::before,
+   &::after {
+      content: "";
+      height: 2px;
+      background-color: #000;
+   }
+   span {
+      content: "";
+      height: 2px;
+      background-color: #000;
+   }
+   body:target & {
+      display: none;
+   }
+}
+.icon-close {
+   display: none;
+   &::before {
+      content: "";
+      transform: translate(0px, 6px) rotate(-47deg);
+   }
+   &::after {
+      content: "";
+      transform: translate(1px, -10px) rotate(47deg);
+   }
+   body:target & {
+      display: flex;
+   }
+}
